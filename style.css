@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(33, 26, 26);
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  
+  
+  h1 {
+    font-family: DM serif display;
+    text-shadow: 2px 2px 4px rgba(255, 234, 0, 0.3); /* Add a subtle text shadow */
+    margin-top:1;
+    text-align: center;
+    color: beige;
+    font-size: 70px;
+  }
+  .vertical-text {
+    position: absolute;
+    left: 75px; /* Adjust this value to change the distance from the left side */
+    top: 83%;
+    transform: translateY(-50%) rotate(-180deg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: #826d7e;
+    writing-mode: vertical-rl;
+    text-orientation:sideways-right;
+    white-space: nowrap;
+  }
+  .video-section {
+    position: absolute;
+    left: 75px; /* Adjust this value to change the distance from the left side */
+    top: 150%;
+    transform: translateY(-50%) rotate(-180deg);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 50px;
+    color: #826d7e;
+    writing-mode: vertical-rl;
+    text-orientation:sideways-right;
+    white-space: nowrap;
+  }
+  .header-links {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .separator {
+    border-left: 1px solid #d19dc7;
+    height: 50px;
+    margin:  20px;
+  }
+  
+  a {
+    text-decoration:double;
+    color: #f3bee2;
+    display: block;
+    text-align: center;
+    margin-bottom: 3%;
+    font-size: 40px;
+  }
+  
+  .wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: auto;
+    max-width: 700px;
+    max-height: 700px;
+    
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 2vmin;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  IMG {
+    z-index: 1;
+    grid-column: span 2;
+    max-width: 100%;
+    margin-bottom: -52%;
+    clip-path:circle();
+    transform: scale(1);
+    transition: all .25s;
+    
+    &:nth-child(7n + 1) {
+      grid-column: 2 / span 2;
+    }
+    
+    &:hover {
+      z-index: 2;
+      transform: scale(2);
+    }
+  }
+ 
+.about-me-section {
+   
+    font-size: 30px;
+    text-align: center; 
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUpAboutMe 1s ease 0.5s forwards;
+    margin-top: 20px;
+    color: rgb(245, 183, 244);
+  }
+  
+  .about-me-section p {
+    text-align:inherit;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.6;
+    color: white;
+  }
+  
+  /* Keyframes for about me section fade-in animation */
+  @keyframes fadeInUpAboutMe {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Your existing CSS styles */
+  
+  /* Add this new CSS for the skills section */
+  .skills-section {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUpSkills 1s ease 0.5s forwards;
+    margin-top: 50px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .skills-section h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f3bee2;
+
+  }
+  
+  .skills-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .skills-section li {
+    font-size: 20px;
+    margin: 10px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpSkills 1s ease forwards;
+  }
+  
+  /* Keyframes for skills section fade-in animation */
+  @keyframes fadeInUpSkills {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Stylish bullets */
+  .skills-section li::before {
+    content: " • ";
+    position: absolute;
+    left: -20px;
+    color: #f3bee2;
+    font-size: 24px;
+  }
+  .contact-section {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUpContact 1s ease 0.5s forwards;
+    margin-top: 50px;
+    color: white;
+  }
+  
+  .contact-section h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f3bee2;
+  }
+  
+  .contact-section p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .contact-info {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .contact-info li {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Keyframes for contact section fade-in animation */
+  @keyframes fadeInUpContact {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Add new CSS for the call-to-action section */
+  .call-to-action {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUpCTA 1s ease 0.5s forwards;
+    margin-top: 50px;
+    color: white;
+  }
+  
+  .call-to-action h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f3bee2;
+  }
+  
+  .call-to-action p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .call-to-action button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #f3bee2;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .call-to-action button:hover {
+    background-color: #d19dc7;
+  }
+  
+  /* Keyframes for call-to-action section fade-in animation */
+  @keyframes fadeInUpCTA {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
